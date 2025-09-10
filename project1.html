@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="projects.css">
+  <title>Restaurant Menu</title>
+  <style>
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 15px;
+      font-size: 26px;
+      color: #0b2354;
+    }
+    p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    /* Navbar */
+    nav {
+      background: #0b2354;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #059d56;
+    }
+
+    /* Menu Sections */
+    .menu-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .menu {
+      margin-bottom: 50px;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-item {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .menu-item:hover {
+      transform: translateY(-5px);
+    }
+    .menu-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+    }
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+
+     .faq-container {
+  max-width: 800px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-question span {
+  transition: transform 0.3s ease;
+  font-size: 20px;
+}
+
+.faq-question.active span {
+  transform: rotate(180deg); /* flip arrow upside down */
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  font-size: 15px;
+  color: #555;
+}
+
+.faq-answer.show {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+ <nav class="navbar">
+  <div class="logo-container">
+    <img src="src/logo.jpeg" alt="Restaurant Logo" class="logo">
+    <span class="restaurant-name">Delicious Bites</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+  
+  <!-- Hero Section (Slider) -->
+  <section id="home" class="hero">
+    <h1>Welcome to Our Restaurant</h1>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-container">
+
+    <div class="menu">
+      <h1>Breakfast</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="/src/pancake.jpeg" alt="Pancake">
+          <p>Pancake - $3</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/omellete.jpeg" alt="Omelette">
+          <p>Omelette - $4</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/french toast.jpeg" alt="French Toast">
+          <p>French Toast - $7</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/fruit salad.jpeg" alt="Fruit Salad">
+          <p>Fruit Salad - $4</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <h1>Lunch</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="/src/caesar salad.jpeg" alt="Caesar Salad">
+          <p>Caesar Salad - $8</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/grilledchickensandwich.jpeg" alt="Grilled Sandwich">
+          <p>Grilled Sandwich - $5</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/spaghetibolognese.jpeg" alt="Spaghetti Bolognese">
+          <p>Spaghetti Bolognese - $6</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/cheeseburger.jpeg" alt="Cheese Burger">
+          <p>Cheese Burger - $9</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <h1>Dinner</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="/src/steak.jpeg" alt="Steak">
+          <p>Steak - $5</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/lobster.jpeg" alt="Lobster">
+          <p>Lobster - $10</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/grilled salmon.jpeg" alt="Grilled Salmon">
+          <p>Grilled Salmon - $15</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/Vegetable Stir Fry.jpeg" alt="Vegetable Stir Fry">
+          <p>Vegetable Stir Fry - $8</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <h1>Desserts</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="/src/cheesecake.jpeg" alt="Cheesecake">
+          <p>Cheesecake - $10</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/chocolate cake.jpeg" alt="Chocolate Cake">
+          <p>Chocolate Cake - $12</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/icecream sundae.jpeg" alt="Icecream">
+          <p>Icecream - $3</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/fruit tart.jpeg" alt="Fruit Tart">
+          <p>Fruit Tart - $10</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <h1>Beverages</h1>
+      <div class="menu-items">
+        <div class="menu-item">
+          <img src="/src/coffee.jpeg" alt="Coffee">
+          <p>Coffee - $4</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/tea.jpeg" alt="Tea">
+          <p>Tea - $3</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/orange juice.jpeg" alt="Orange Juice">
+          <p>Orange Juice - $7</p>
+        </div>
+        <div class="menu-item">
+          <img src="/src/Blueberry Smoothie.jpeg" alt="Smoothie">
+          <p>Smoothie - $15</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- About Section -->
+<section id="about" style="padding: 40px; text-align: center;">
+  <h2>About Us</h2>
+  <p>We are passionate about serving fresh, delicious, and high-quality meals to our customers.<br> From breakfast to dinner, enjoy a variety of options prepared with love.</p>
+    
+<div class="faq-container">
+  <h3>Frequently Asked Questions</h3>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you offer home delivery? <span>˅</span></button>
+    <div class="faq-answer">
+      <p>Yes! We offer fast and reliable delivery services within the city limits.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Are your ingredients fresh? <span>˅</span></button>
+    <div class="faq-answer">
+      <p>Absolutely! We source fresh and high-quality ingredients every day.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Do you provide catering for events? <span>˅</span></button>
+    <div class="faq-answer">
+      <p>Yes, we provide catering services for birthdays, weddings, and corporate events.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Can I reserve a table online? <span>˅</span></button>
+    <div class="faq-answer">
+      <p>Of course! You can easily book a table through our website or by phone.</p>
+    </div>
+  </div>
+</div>
+
+</section>
+
+<!-- Contact Us Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+
+  <div class="contact-container">
+    <!-- Left Side: Contact Info -->
+    <div class="contact-info">
+      <h3>Get Started</h3>
+      <p><strong>Address:</strong> 277 Anywhere Street, Any City</p>
+      <p><strong>Phone:</strong> +254 712 345 678</p>
+      <p><strong>Email:</strong> youremail@gmail.com</p>
+      <p>We’re happy to answer your questions or take your order!</p>
+    </div>
+
+    <!-- Right Side: Contact Form -->
+    <form class="contact-form" action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="text" name="subject" placeholder="Subject" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h3>Delicious Bites</h3>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="bx bxl-facebook"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+      <a href="#"><i class="bx bxl-youtube"></i></a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2025 My Restaurant. All rights reserved.</p>
+</footer>
+
+
+ <script>
+    // Background Slider
+    const hero = document.querySelector(".hero");
+    const images = [
+      "/src/chefs.jpeg",
+      "/src/interior.jpeg",
+      "/src/view.jpeg",
+      "/src/customers.jpeg"
+      
+    ];
+    let i = 0;
+
+    function changeBackground() {
+      hero.style.backgroundImage = `url('${images[i]}')`;
+      i = (i + 1) % images.length;
+    }
+
+    setInterval(changeBackground, 4000);
+    changeBackground(); 
+
+
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach(question => {
+    question.addEventListener("click", () => {
+      question.classList.toggle("active");
+
+      const answer = question.nextElementSibling;
+      answer.classList.toggle("show");
+    });
+  });
+
+  </script>
+</body>
+</html>

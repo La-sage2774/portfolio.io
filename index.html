@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
      <link rel="stylesheet" href="style.css"> 
+     <link rel="stylesheet" href="projects.css">
      <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -17,77 +19,273 @@
       body{
         font-family: "poppins", sans-serif;
      }
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* title left, links centered */
+      background-color: #001f3f; /* Navy blue */
+      padding: 15px 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      position: sticky; /* keeps it at the top */
+      top: 0;           /* distance from top */
+      width: 100%;
+      z-index: 1000;    /* stay above other content */
+      padding: 15px 0;
+
+    }
+    nav a {
+     color: white;
+     text-decoration: none;
+     margin: 0 20px;
+     transition: color 0.3s;
+    }
+
+    nav a:hover {
+     color: green;
+    }
+    nav p {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      margin-right: 40px; /* space between title and links */
+    }
+   nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      justify-content: center; /* center links */
+      flex: 1;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 5px 10px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #00ff00; /* Green on hover */
+    }
+
+    /* Hero section (vertical) */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .hero img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      line-height: 1.3;
+      color: #001f3f;
+    }
+    .hero h1 span {
+      font-size: 20px;
+      font-weight: normal;
+      display: block;
+    }
+    .hero p {
+      font-size: 15px;
+      max-width: 600px;
+      margin-bottom: 20px;
+      color: #333;
+      line-height: 1.5;
+    }
+    .hero .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+    .hero .buttons a {
+      text-decoration: none;
+      background-color: #4caf50;
+      color: #001f3f;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .hero .buttons a:hover {
+      background-color: transparent;
+      border: 2px solid #001f3f;
+      color: #4caf50;
+    }
+
+    /* Responsive */
+    @media (min-width: 600px) {
+      .hero .buttons {
+        flex-direction: row;
+      }
+      .hero .buttons a {
+        margin: 0 10px;
+      }
+    }
+    @media (max-width: 400px) {
+      .hero img {
+        width: 180px;
+        height: 180px;
+      }
+      .hero h1 {
+        font-size: 24px;
+      }
+      .hero h1 span {
+        font-size: 16px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+    }
     </style>
 </head>
 <body>
-    <section class="tailwind-section">
-      <div class="container relative">
-      <nav class="flex items-center my-2" >
-        <p>PORTFOLIO.</p>
-        <ul class="flex-1 text-center list-none m-2 ">
-          <li class="inline-block list-none px-3"><a href="#" class="hover:text-yellow-300 uppercase px-2">Home</a></li>
-          <li class="inline-block list-none px-3"><a href="#" class="uppercase hover:text-yellow-300 px-2">About</a></li>
-          <li class="inline-block list-none px-3"><a href="#" class="uppercase hover:text-yellow-300 px-2">Projects</a></li>
-          <li class="inline-block list-none  px-3"><a href="#" class="uppercase hover:text-yellow-300 px-2">Contact</a></li>
+  <!-- Navbar -->
+  <nav>
+    <p>PORTFOLIO.</p>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-        </ul>
-      </nav>
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <img src="./src/codergirl.jpeg" alt="Profile Image">
+    <h1><span>Hello there,</span> I'm Nima Mohamed</h1>
+    <p>
+      I'm a detail-oriented developer with a passion for creating clean, efficient, and accessible code.
+      With a strong foundation in HTML, CSS, JavaScript, and frameworks like React, I enjoy turning complex problems into elegant solutions.
+    </p>
+    <div class="buttons">
+      <a href="#">Resume</a>
+      <a href="#">Download CV</a>
+    </div>
+  </section>
+
      
+<section id="about" class="custom-section">
+  <div class="about-container">
+
+    <!-- Image -->
+    <div class="about-img">
+      <img src="./src/tech.jpeg" alt="About Me Image"/>
+    </div>
+
+    <!-- Text + Skills -->
+    <div class="about-left">
+      <div class="about-me">
+        <h1>About <span>Me!</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.
+        </p>
       </div>
-      <div class="flex justify-center items-center">
-      <div class="mt-24 mb-3 max-w-xl text-center">
-        <img src="./src/green.jpeg" class="h-32 rounded-full items-center mx-auto mb-3">
-        <h1 class="text-4xl font-semibold leading-normal mb-2"><span class="font-normal ">Hello there,</span><br> I'm Nima Mohamed</h1>
-        <p  class="" >
-          I'm a detail-oriented developer with a passion for creating clean, efficient, and accessible code.
-          With a strong foundation in HTML, CSS, JavaScript, and frameworks like React, I enjoy turning complex problems into elegant solutions.
-          </p>
+
+      <!-- Skills / Progress Bars -->
+      <div class="main-about">
+        <p>HTML & CSS</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 90%;">90%</div>
         </div>
+
+        <p>JavaScript</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 75%;">75%</div>
         </div>
-        <div class="mt-10 mb-5 text-center"> 
-          <a href="#" class="rounded-full bg-yellow-300 px-3 py-1 font-medium inline-block mr-2 text-blue-950 hover:bg-transparent hover:border-blue-950 hover:text-yellow-300 hover:border ">Resume</a>
-          <a href="#" class="rounded-full bg-yellow-300 px-3 py-1 font-medium inline-block text-blue-950 hover:bg-transparent hover:border-blue-950 hover:text-yellow-300 hover:border">Download Cv </a>
+
+        <p>React JS</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 65%;">65%</div>
+        </div>
+
+        <p>Node JS</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 60%;">60%</div>
+        </div>
+
+        <p>PHP</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 55%;">55%</div>
+        </div>
+
+        <p>Database</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 70%;">70%</div>
+        </div>
+
+        <p>GitHub</p>
+        <div class="progress-container">
+          <div class="progress-bar" style="width: 80%;">80%</div>
+        </div>
       </div>
-      </section>
+    </div>
 
-      <!-- <section>
+  </div>
+</section>
 
-        <div class="flex justify-end pr-72">
-          <p class="text-lg font-semibold text-gray-800">Progress of JavaScript: 70%</p>
-        <div class="bg-gray-300 rounded-full h-4 ml-4" style="width: 45%;">
-          <div class="bg-green-500 h-4 rounded-full" style="width: 70%;"></div>
-        </div>
-      </div>
-      </section> -->
+      
+<section id="projects" class="projects-section">
+  <div class="projects-nav">
+    <a href="#" class="tab-link active" data-project="project1.html">Project 1</a>
+    <a href="#" class="tab-link" data-project="project2.html">Project 2</a>
+    <a href="#" class="tab-link" data-project="project3.html">Project 3</a>
+  </div>
 
-      <section class="custom-section">
-        <div class="about-img">
-          <!-- <img src="./src/green.jpeg"/> -->
-        </div>
-        <div class="about-container">
-          <div class="about-me">
-          <h1>About <span>Me!</span></h1><br>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod<br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea<br> commodo consequat.</p>
-          </div>
-          <div class="main-about">
-            <p>Html & Css</p>
-          <div class="progress-container">
-            <div class="progress-bar" style="width: 85%;">85%</div>
-          </div>
-          <p>JavaScript</p>
-          <div class="progress-container">
-            <div class="progress-bar" style="width: 70%;">70%</div>
-          </div>
-          <p>React Js</p>
-          <div class="progress-container">
-            <div class="progress-bar" style="width: 55%;">55%</div>
-          </div>
-          </div>
-          
-        </div>
-      </section>
+  <div class="projects-area">
+    <iframe id="project-frame" src="project1.html"></iframe>
+  </div>
+  
+<script>
+  const links = document.querySelectorAll(".tab-link");
+  const iframe = document.getElementById("project-frame");
 
-      <section class="contact">
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Remove active from all
+      links.forEach(l => l.classList.remove("active"));
+
+      // Add active to clicked link
+      link.classList.add("active");
+
+      // Load correct project
+      iframe.src = link.dataset.project;
+    });
+  });
+</script>
+</section>
+
+      <section  id="contact" class="contact">
         <div class="contact-container mt-8">
             <div class="contact-box">
                 <h2>Let's Work Together</h2>
@@ -129,5 +327,29 @@
                   </div>
            </div>
       </section>
+
+      <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h3>PORTFOLIO.</h3>
+    </div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <a href="#"><i class="bx bxl-facebook"></i></a>
+      <a href="#"><i class="bx bxl-twitter"></i></a>
+      <a href="#"><i class="bx bxl-instagram"></i></a>
+      <a href="#"><i class="bx bxl-youtube"></i></a>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; 2025 PORTFOLIO.</p>
+</footer>
 </body>
 </html>

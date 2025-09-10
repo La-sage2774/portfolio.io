@@ -93,52 +93,126 @@
     color: #FFD700;
  }
 
+ /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* stack columns */
+    gap: 2rem;
+  }
+
+  .contact-box {
+    margin: 0 auto;
+  }
+
+  .contact-box form {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-box h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-box p {
+    font-size: 0.85rem;
+  }
+
+  .contact-detail i {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+  }
+
+  .contact-box .field-box {
+    grid-template-columns: 1fr; /* all fields stacked vertically */
+  }
+
+  .contact-box .field-box textarea {
+    height: 12rem;
+  }
+}
+
+ 
+ .custom-section .about-container {
+  display: flex;
+  align-items: stretch; /* makes image same height as text */
+  justify-content: center;
+  gap: 4rem;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+}
+
+.custom-section .about-img {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+}
+
+.custom-section .about-img img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.custom-section .about-left {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-section .about-me {
+  margin-bottom: 30px;
+}
+
+.custom-section .about-me h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.custom-section .about-me span {
+  color: rgb(2, 118, 2);
+}
+
+/* Progress Bars */
+.custom-section .progress-container {
+  width: 100%;
+  max-width: 450px;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 22px;
+ margin: 10px 0;
+}
+
+.custom-section .progress-bar {
+  height: 100%;
+  width: 0; /* start empty */
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  font-size: 13px;
+  line-height: 22px;
+  font-weight: bold;
+  transition: width 1.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .custom-section .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .custom-section .about-img img {
+    height: auto;
+    max-height: 400px;
+  }
+
   .custom-section .progress-container {
-   width: 30rem;
-   background-color: #e0e0e0;
-   border-radius: 25px;
-   overflow: hidden;
-   height: 20px;
-   margin: 20px 0;
- }
- 
- .custom-section .progress-bar {
-   height: 100%;
-   /* width: 0%; */
-   background-color: #4caf50;
-   color: white;
-   text-align: center;
-   line-height: 30px;
-   font-weight: bold;
-   transition: width 0.5s ease-in-out;
- }
-
- .custom-section .progress-container{
-   margin-left: 40rem;
- }
-
- .custom-section .about-img{
-   margin-left: 15rem;
-   width: 320px;
-   height: auto;
-   margin-top: 5rem;
- }
-
- .custom-section .about-me{
-   margin-left: 40rem;
-   margin-bottom: 50px;
- }
-
- .custom-section .main-about p{
-   margin-left: 40rem;
- }
-
- .custom-section .about-me span{
-   color: rgb(2, 118, 2);
- }
-
- 
-
-
-
- 
+    margin: 15px auto;
+  }
+}
